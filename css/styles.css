@@ -199,7 +199,7 @@ body {
 
 /* Carousel Styles */
 .carousel-wrapper {
-    width: 400px;
+    width: 100%;
     overflow: hidden;
     position: relative;
 }
@@ -226,7 +226,7 @@ body {
 
     .carousel-container::before,
     .carousel-container::after {
-        width: 250px;
+        width: 100%;
         /* Desktop */
     }
 }
@@ -266,7 +266,7 @@ body {
 
 .carousel-item {
     height: 350px;
-    width: auto;
+    width: full;
     object-fit: cover;
     flex-shrink: 0;
     border-radius: 8px;
@@ -274,9 +274,7 @@ body {
 
 @media (min-width: 768px) {
     .carousel-item {
-        height: 200px;
-        width: 200px;
-        margin: -30px 0 0 -30px;
+        height: 600px;
     }
 }
 
@@ -290,8 +288,6 @@ body {
 @media (min-width: 768px) {
     .projects-track .carousel-item {
         height: 300px;
-        width: 200px;
-        margin: -30px 0 0 -30px;
     }
 
     .projects-track {
@@ -302,7 +298,7 @@ body {
     /* Optional: Hover effect to simulate interaction/depth */
     .projects-track .carousel-item:hover {
         transform: scale(1.2);
-        z-index: 10;
+        z-index: 1;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
 }
