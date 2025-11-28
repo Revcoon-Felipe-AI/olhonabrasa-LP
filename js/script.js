@@ -80,4 +80,37 @@ document.addEventListener('DOMContentLoaded', function () {
         // Ensure we have enough items for a smooth loop?
         // We already duplicated them in HTML, so this should be fine.
     });
+
+    // --- Countdown Timer Logic ---
+    function startCountdown() {
+        const deadline = new Date("2025-12-05T23:59:59").getTime();
+        const urgencySection = document.getElementById('urgency-section');
+
+        if (!urgencySection) return;
+
+        const timer = setInterval(function () {
+            const now = new Date().getTime();
+            const t = deadline - now;
+
+            if (t >= 0) {
+                const days = Math.floor(t / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((t % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+                document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+                document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+                document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+
+                // Show section if hidden
+                urgencySection.classList.remove('hidden');
+            } else {
+                clearInterval(timer);
+                urgencySection.classList.add('hidden'); // Hide if expired
+            }
+        }, 1000);
+    }
+
+    startCountdown();
 });

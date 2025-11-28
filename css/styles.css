@@ -215,10 +215,10 @@ body {
     content: '';
     position: absolute;
     top: 0;
-    width: 80px;
+    width: 4px;
     /* Mobile default */
     height: 100%;
-    z-index: 10;
+    z-index: 1;
     pointer-events: none;
 }
 
@@ -243,7 +243,7 @@ body {
 
 .carousel-track {
     display: flex;
-    gap: 20px;
+    gap: 60px;
     /* Reduced gap */
     width: max-content;
     animation: scroll-left 40s linear infinite;
@@ -265,7 +265,7 @@ body {
 }
 
 .carousel-item {
-    height: 150px;
+    height: 250px;
     width: auto;
     object-fit: contain;
     flex-shrink: 0;
@@ -281,6 +281,8 @@ body {
 /* Projects Carousel Specifics */
 .projects-track .carousel-item {
     height: 200px;
+    transition: transform 0.3s ease;
+    /* Smooth hover effect */
 }
 
 @media (min-width: 768px) {
@@ -289,8 +291,15 @@ body {
     }
 
     .projects-track {
-        animation-duration: 60s;
-        /* Slower for projects */
+        animation-duration: 120s;
+        /* Drastically slower as requested */
+    }
+
+    /* Optional: Hover effect to simulate interaction/depth */
+    .projects-track .carousel-item:hover {
+        transform: scale(1.2);
+        z-index: 10;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
 }
 
@@ -339,14 +348,37 @@ body {
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* Container das faixas */
+/* Urgency Section Styles */
+.urgency-banner {
+    background: #ffffff;
+    border: 4px solid #e96527;
+    transform: rotate(-1deg);
+    transition: transform 0.3s ease;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 20;
+}
+
+.urgency-banner:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+#countdown span {
+    font-variant-numeric: tabular-nums;
+}
+
+/* Container das faixas (Legacy/Unused but kept for reference if needed) */
 .rotating-banners {
     position: relative;
     width: 100%;
     height: 160px;
-    /* Aumentado para acomodar o cruzamento */
     overflow: hidden;
-    margin: 20px 0;
+    margin: -10px 0 20px;
+    /* Negative top margin to pull it up */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -357,9 +389,9 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 120%;
+    width: 170%;
     /* Maior que 100% para cobrir rotação */
-    height: 50px;
+    height: 70px;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -368,16 +400,16 @@ body {
 
 /* Faixa 1: Rotação Negativa, Fundo Branco, Texto Laranja */
 .rotate-neg {
-    transform: translate(-50%, -50%) rotate(-3deg);
+    transform: translate(-50%, -50%) rotate(-20deg);
     background: #ffffff;
     z-index: 10;
 }
 
 /* Faixa 2: Rotação Positiva, Fundo Laranja, Texto Branco */
 .rotate-pos {
-    transform: translate(-50%, -50%) rotate(3deg);
-    background: #e96527;
-    z-index: 5;
+    transform: translate(-50%, -50%) rotate(10deg);
+    background: #000000;
+    z-index: 51;
 }
 
 /* Track do texto (O que se move) */
@@ -432,16 +464,36 @@ body {
 /* Mobile */
 @media (max-width: 767px) {
     .rotating-banners {
-        height: 120px;
-        margin: 10px 0;
+        height: 250px;
+        margin: 0;
     }
 
     .banner-container {
-        height: 40px;
+        height: 90px;
     }
 
     .banner-text {
         font-size: 1.1rem;
         padding: 0 20px;
     }
+}
+
+/* Mobile Banner Specifics */
+@keyframes scroll-left-mobile {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-scroll-left {
+    animation: scroll-left-mobile 20s linear infinite;
+    width: max-content;
+}
+
+#mobile-banner .carousel-track:hover {
+    animation-play-state: paused;
 }
