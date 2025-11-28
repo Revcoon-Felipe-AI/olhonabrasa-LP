@@ -1,0 +1,11 @@
+{
+  "name": "olho-na-brasa-lp",
+  "version": "1.0.0",
+  "description": "Landing Page Olho na Brasa",
+  "scripts": {
+    "build": "echo 'No build step required for static site' && exit 0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
