@@ -44,30 +44,48 @@
     <!-- Logo FORA da coluna -->
     <div class="logo-container">
         <img src="https://s3.1app.com.br/master/project_24727/t0S1gqPQHXVGj8qyYZkhv3LXPfZcpQPI.png" alt="Olho na Brasa"
-            class="logo-main">
+            class="logo-main md:w-100px w-60">
     </div>
 
     <!-- Main Column -->
     <main class="main-column">
 
         <!-- Hero Section -->
-        <section id="hero" class="hero-section text-center mb-10">
+        <section id="hero" class="hero-section text-center">
             <h1
-                class="hero-headline font-alfa text-3xl md:text-5xl lg:text-6xl text-white uppercase leading-tight mb-6">
+                class="hero-headline font-alfa text-3xl md:text-5xl lg:text-6xl md:text-spacing-1px text-white uppercase leading-tight mb-6">
                 O NOSSO XODÓ PRESENTE NAS SUAS COMEMORAÇÕES
             </h1>
-            <h2 class="hero-subheadline font-roboto text-white uppercase text-lg md:text-2xl mb-6">
-                Quando uma BRASA se acende uma nova chaaama revive dentro de nós.
+            <h2 class="hero-subheadline font-roboto text-white uppercase text-lg md:text-4xl mb-6">
+                Quando uma BRASA se acende uma nova chaaama revive dentro de nós.<br><b
+                    class="font-roboto weight-bold-800">Essa é a nossa história:</b>
             </h2>
 
+            <div class="hero-stats flex justify-center md:height-2px gap-8 opacity-90">
+                <div>
+                    <span class="block font-alfa text-3xl md:text-4xl">100K</span>
+                    <span class="text-sm uppercase tracking-widest">Seguidores<br><b
+                            class="font-alfa">Instagram</b></span>
+                </div>
+                <div>
+                    <span class="block font-alfa text-3xl md:text-4xl">6k+</span>
+                    <span class="text-sm uppercase tracking-widest">Clientes<br><b
+                            class="font-alfa">Satisfeitos</b></span>
+                </div>
+                <div>
+                    <span class="block font-alfa text-3xl md:text-4xl">15</span>
+                    <span class="text-sm uppercase tracking-widest">Anos de<br><b class="font-alfa">Garantia</b></span>
+                </div>
+            </div>
             <!-- Urgency Countdown Section -->
-            <div id="urgency-section" class="mb-16 hidden">
+            <div id="urgency-section" class="mb-8 hidden">
                 <div class="urgency-banner">
-                    <p class="font-alfa text-lg md:text-4xl text-center uppercase mb-2 text-primary">
-                        🔥 Última chance para receber ainda este ano! 🔥
+                    <p class="font-alfa text-2xl md:text-3xl text-center uppercase mb-6 text-primary margin-top-25px">
+                        🔥 Últimos dias para adquirir o <b class="text-black">Kit Suporte Suspenso</b> e receber este
+                        ano! 🔥
                     </p>
                     <div id="countdown"
-                        class="flex justify-center gap-4 font-mono text-2xl md:text-3xl font-bold text-black">
+                        class="flex justify-center gap-5 font-mono text-4xl md:mb-8 mb-6 md:text-4xl font-bold text-black">
                         <!-- JS will populate this -->
                         <div class="flex flex-col items-center md:translate-y-4 md:margin-top-7px"><span
                                 id="days">00</span><span
@@ -85,7 +103,8 @@
                                 id="seconds">00</span><span
                                 class="text-xs md:text-2xl font-roboto font-normal text-gray-500">SEG</span></div>
                     </div>
-                    <p class="text-center text-xs md:text-2xl md:margin-top-7px lg:margin-top-7px text-gray-500 mt-4">
+                    <p
+                        class="text-center text-2xs md:text-2xl mb-6 md:margin-top-7px lg:margin-top-7px text-gray-500 mt-4">
                         Oferta válida até
                         05/12/2025</p>
                     <div class="text-center mt-4">
@@ -96,49 +115,36 @@
                     </div>
                 </div>
             </div>
-
-            <div class="hero-stats flex justify-center gap-8 opacity-90">
-                <div>
-                    <span class="block font-alfa text-3xl md:text-4xl">6k+</span>
-                    <span class="text-sm uppercase tracking-widest">Clientes<br><b
-                            class="font-alfa">Satisfeitos</b></span>
-                </div>
-                <div>
-                    <span class="block font-alfa text-3xl md:text-4xl">15</span>
-                    <span class="text-sm uppercase tracking-widest">Anos<br><b class="font-alfa">Garantia</b></span>
-                </div>
-            </div>
-
             <div class="rotating-banners">
                 <!-- Faixa 1: Branca com texto Laranja (Rotacionada Negativa) -->
                 <div class="banner-container rotate-neg">
                     <div class="scrolling-text">
-                        <span class="banner-text">ÚLTIMOS DIAS</span>
-                        <span class="banner-text">ÚLTIMOS DIAS</span>
-                        <span class="banner-text">ÚLTIMOS DIAS</span>
-                        <span class="banner-text">ÚLTIMOS DIAS</span>
-                        <span class="banner-text">ÚLTIMOS DIAS</span>
-                        <span class="banner-text">ÚLTIMOS DIAS</span>
-                        <span class="banner-text">ÚLTIMOS DIAS</span>
-                        <span class="banner-text">ÚLTIMOS DIAS</span>
-                        <span class="banner-text">ÚLTIMOS DIAS</span>
-                        <span class="banner-text">ÚLTIMOS DIAS</span>
+                        <span class="banner-text">ÚLTIMOS<b class="font-bold text-black"> DIAS</b></span>
+                        <span class="banner-text">KIT<b class="font-bold text-black"> PREMIUM</b></span>
+                        <span class="banner-text">ÚLTIMOS<b class="font-bold text-black"> DIAS</b></span>
+                        <span class="banner-text">KIT<b class="font-bold text-black"> PREMIUM</b></span>
+                        <span class="banner-text">ÚLTIMOS<b class="font-bold text-black"> DIAS</b></span>
+                        <span class="banner-text">KIT<b class="font-bold text-black"> PREMIUM</b></span>
+                        <span class="banner-text">ÚLTIMOS<b class="font-bold text-black"> DIAS</b></span>
+                        <span class="banner-text">KIT<b class="font-bold text-black"> PREMIUM</b></span>
+                        <span class="banner-text">ÚLTIMOS<b class="font-bold text-black"> DIAS</b></span>
+                        <span class="banner-text">KIT<b class="font-bold text-black"> PREMIUM</b></span>
                     </div>
                 </div>
 
                 <!-- Faixa 2: Laranja com texto Branco (Rotacionada Positiva) -->
                 <div class="banner-container rotate-pos">
                     <div class="scrolling-text reverse">
-                        <span class="banner-text text-white">ÚLTIMOS DIAS</span>
-                        <span class="banner-text text-white">ÚLTIMOS DIAS</span>
-                        <span class="banner-text text-white">ÚLTIMOS DIAS</span>
-                        <span class="banner-text text-white">ÚLTIMOS DIAS</span>
-                        <span class="banner-text text-white">ÚLTIMOS DIAS</span>
-                        <span class="banner-text text-white">ÚLTIMOS DIAS</span>
-                        <span class="banner-text text-white">ÚLTIMOS DIAS</span>
-                        <span class="banner-text text-white">ÚLTIMOS DIAS</span>
-                        <span class="banner-text text-white">ÚLTIMOS DIAS</span>
-                        <span class="banner-text text-white">ÚLTIMOS DIAS</span>
+                        <span class="banner-text text-white">ÚLTIMOS<b class="font-bold text-primary"> DIAS</b></span>
+                        <span class="banner-text text-white">KIT<b class="font-bold text-primary"> PREMIUM</b></span>
+                        <span class="banner-text text-white">ÚLTIMOS<b class="font-bold text-primary"> DIAS</b></span>
+                        <span class="banner-text text-white">KIT<b class="font-bold text-primary"> PREMIUM</b></span>
+                        <span class="banner-text text-white">ÚLTIMOS<b class="font-bold text-primary"> DIAS</b></span>
+                        <span class="banner-text text-white">KIT<b class="font-bold text-primary"> PREMIUM</b></span>
+                        <span class="banner-text text-white">ÚLTIMOS<b class="font-bold text-primary"> DIAS</b></span>
+                        <span class="banner-text text-white">KIT<b class="font-bold text-primary"> PREMIUM</b></span>
+                        <span class="banner-text text-white">ÚLTIMOS<b class="font-bold text-primary"> DIAS</b></span>
+                        <span class="banner-text text-white">KIT<b class="font-bold text-primary"> PREMIUM</b></span>
                     </div>
                 </div>
             </div>
@@ -147,7 +153,7 @@
         <!-- Mechanism / Transformation Section (Moved Up) -->
         <section id="transformation" class="mb-16">
             <h2 class="font-alfa text-4xl md:text-5xl lg:text-6xl text-white text-center mb-8 uppercase drop-shadow-md">
-                ISSO é poder
+                ISSO é poder:
             </h2>
             <div class="bg-black/20 backdrop-blur-sm rounded-xl p-6 border border-white/10">
                 <ul class="text-left space-y-6">
@@ -216,12 +222,15 @@
 
         <!-- Projects Carousel Section -->
         <section id="projects-carousel" class="mb-16">
-            <h2 class="font-alfa text-2xl md:text-3xl text-white text-center mb-8 uppercase drop-shadow-md">
-                Junte-se a 6.000 Reis do Churrasco
+            <h2 class="font-alfa text-2xl md:text-3xl text-white text-center mb-4 uppercase drop-shadow-md">
+                Junte-se a uma comunidade de Churrasqueiros
+            </h2>
+            <h2 class="font-roboto text-2xl md:text-2xl text-white text-center mb-4 drop-shadow-md mb-8">
+                confira alguns projetos:
             </h2>
 
             <!-- Carousel -->
-            <div class="carousel-wrapper mb-1">
+            <div class="carousel-wrapper mb-5">
                 <div class="carousel-container">
                     <div class="carousel-track projects-track">
                         <!-- Set 1 -->
@@ -280,111 +289,107 @@
         </section>
 
         <!-- Mobile Banner Section (New) -->
-        <section id="mobile-banner" class="mb-16 bg-primary rounded-2xl overflow-hidden shadow-2xl relative">
+        <section id="mobile-banner" class="mb-10 bg-primary rounded-2xl overflow-hidden shadow-2xl relative">
             <div class="p-6 pb-0 text-center">
                 <!-- Social Proof Header -->
                 <img src="https://s3.1app.com.br/master/project_24727/44EQdQmZuqd2BuyT5sY6UHj7GMctu3Zt.png"
-                    alt="+100 Mil Seguidores" class="mx-auto md:h-[60px] h-10 mb-6 object-contain">
+                    alt="+100 Mil Seguidores" class="mx-auto md:h-[60px] h-12 mb-6 object-contain">
 
                 <!-- Main Title -->
                 <h2 class="font-alfa leading-none mb-2">
-                    <span class="block text-black text-6xl md:text-8xl">SUPORTE</span>
-                    <span class="block text-white text-5xl md:text-7xl">SUSPENSO</span>
+                    <span class="text-black text-6xl md:text-8xl">SUPORTE</span>
+                    <span class="text-white text-5xl md:text-7xl">SUSPENSO</span>
                 </h2>
-                <p class="font-alfa text-lg md:text-2xl text-black tracking-widest md:mb-4 mb-4 uppercase mb-4">
-                    Exclusivo
-                    Olho na
-                    Brasa</p>
+                <p class="font-roboto font-bold text-2xl md:text-2xl text-black md:mb-4 mb-2 uppercase">
+                    Exclusivo<b class="text-white"> Olho na Brasa</b></p>
 
                 <!-- Main Product Image -->
-                <div class="relative z-10 -mb-8">
+                <div class="z-6 mb-8">
                     <img src="https://s3.1app.com.br/master/project_24727/Eacchc7n4TondQOqsdbHyjVOsapPdnIt.png"
                         alt="Suporte Suspenso"
-                        class="w-full h-auto object-contain drop-shadow-2xl transform hover:scale-105 transition-transform duration-500">
+                        class="w-full h-auto object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500">
                 </div>
             </div>
 
             <!-- Product Marquee (Slider) -->
-            <div class="relative z-2 md:z-10">
+            <div class="w-full md:z-2">
                 <div class="carousel-track flex gap-1 animate-scroll-left">
                     <!-- Using PRODUCT items for the marquee feel -->
                     <img src="https://s3.1app.com.br/master/project_24727/mrMhKZJUcDeGizxZ2zDqyFu52MbCiyBu.png"
-                        class="h-44 md:h-80 w-auto ml-[-28px]">
+                        class="w-60 md:h-80">
                     <img src="https://s3.1app.com.br/master/project_24727/yBEDX7LqEcSUjMORFVSteUapTqxD3wKC.png"
-                        class="h-44 md:h-80 w-auto ml-[-28px]">
+                        class="w-60 md:h-80">
                     <img src="https://s3.1app.com.br/master/project_24727/j1EBAHtTDrvgITyg4BrKScTfwiTIErpV.png"
-                        class="h-44 md:h-80 w-auto ml-[-28px]">
+                        class="w-60 md:h-80">
                     <img src="https://s3.1app.com.br/master/project_24727/24XzlU2g30rakcdYlw3X11qlzQBCtatb.png"
-                        class="h-44 md:h-80 w-auto ml-[-28px]">
+                        class="w-60 md:h-80">
                     <img src="https://s3.1app.com.br/master/project_24727/YCmbx8VIb5eQucVOpIpjS8s4cNRk7Ynb.png"
-                        class="h-44 md:h-80 w-auto ml-[-28px]">
+                        class="w-60 md:h-80">
                     <img src="https://s3.1app.com.br/master/project_24727/UDxmEiYi2ChKrOVr9X6J0CBR4Lcyhk3n.png"
-                        class="h-44 md:h-80 w-auto ml-[-28px]">
+                        class="w-60 md:h-80">
                     <img src="https://s3.1app.com.br/master/project_24727/DWQVzRBny3JsuUM10wUFqgmu7XnxDsa8.png"
-                        class="h-44 md:h-80 w-auto ml-[-28px]">
+                        class="w-60 md:h-80">
 
                     <!-- Duplicate for infinite scroll -->
                     <img src="https://s3.1app.com.br/master/project_24727/mrMhKZJUcDeGizxZ2zDqyFu52MbCiyBu.png"
-                        class="h-44 md:h-80 w-auto ml-[-28px]">
+                        class="h-60 md:h-80">
                     <img src="https://s3.1app.com.br/master/project_24727/yBEDX7LqEcSUjMORFVSteUapTqxD3wKC.png"
-                        class="h-44 md:h-80 w-auto ml-[-28px]">
+                        class="h-60 md:h-80">
                     <img src="https://s3.1app.com.br/master/project_24727/j1EBAHtTDrvgITyg4BrKScTfwiTIErpV.png"
-                        class="h-44 md:h-80 w-auto ml-[-28px]">
+                        class="h-60 md:h-80">
                     <img src="https://s3.1app.com.br/master/project_24727/24XzlU2g30rakcdYlw3X11qlzQBCtatb.png"
-                        class="h-44 md:h-80 w-auto ml-[-28px]">
+                        class="h-60 md:h-80">
                     <img src="https://s3.1app.com.br/master/project_24727/YCmbx8VIb5eQucVOpIpjS8s4cNRk7Ynb.png"
-                        class="h-44 md:h-80 w-auto ml-[-28px]">
+                        class="h-60 md:h-80">
                     <img src="https://s3.1app.com.br/master/project_24727/UDxmEiYi2ChKrOVr9X6J0CBR4Lcyhk3n.png"
-                        class="h-44 md:h-80 w-auto ml-[-28px]">
+                        class="h-60 md:h-80">
                     <img src="https://s3.1app.com.br/master/project_24727/DWQVzRBny3JsuUM10wUFqgmu7XnxDsa8.png"
-                        class="h-44 md:h-80 w-auto ml-[-28px]">
+                        class="h-60 md:h-80">
                 </div>
             </div>
 
             <!-- Features Grid -->
-            <div class="p-6 pt-8 bg-primary">
-                <h3 class="font-alfa text-xl text-white text-center mb-8 leading-tight">
-                    Tudo que você precisa para um churrasco completo.
-                </h3>
+            <div class="p-6 bg-primary gap-10">
 
-                <div class="grid grid-cols-2 gap-4">
+                <div class="grid gap-4 mb-10">
                     <!-- Feature 1 -->
                     <div
-                        class="bg-primary p-3 rounded-lg shadow-lg text-center transform hover:-translate-y-1 transition-transform">
-                        <div class="font-alfa text-white text-2xl md:text-3xl mb-4 uppercase">Fácil de Instalar</div>
+                        class="grid bg-primary p-3 rounded-lg shadow-lg text-center transform hover:-translate-y-1 transition-transform">
+                        <div class="font-alfa text-white text-4xl md:text-5xl mb-4 uppercase">Arsenal Completo</div>
                         <div
-                            class="text-xl md:text-2xl text-gray-600 font-bold bg-black text-white rounded px-2 py-1 inline-block">
-                            Apenas 4
-                            Parafusos</div>
+                            class="text-3xl md:text-4xl text-gray-600 font-bold bg-black text-white rounded px-2 py-1 inline-block margin-15">
+                            Churrasco Perfeito</div>
                     </div>
                     <!-- Feature 2 -->
                     <div
-                        class="bg-primary p-3 rounded-lg shadow-lg text-center transform hover:-translate-y-1 transition-transform">
-                        <div class="font-alfa text-white text-2xl md:text-3xl mb-2 uppercase">Prático de usar</div>
+                        class="grid bg-primary p-3 rounded-lg shadow-lg text-center transform hover:-translate-y-1 transition-transform">
+                        <div class="font-alfa text-white text-4xl md:text-5xl mb-2 uppercase">Prático de usar</div>
                         <div
-                            class="text-xl md:text-2xl text-gray-600 font-bold bg-black text-white rounded px-2 py-1 inline-block">
+                            class="text-3xl md:text-4xl text-gray-600 font-bold bg-black text-white rounded px-2 py-1 inline-block padding-5">
                             Firma
                             sem Apoios</div>
                     </div>
-                    <!-- Feature 3 -->
                     <div
-                        class="bg-primary p-3 rounded-lg shadow-lg text-center transform hover:-translate-y-1 transition-transform">
-                        <div class="font-alfa text-white text-2xl md:text-3xl mb-4 uppercase">Churras Ideal</div>
+                        class="grid bg-primary p-3 rounded-lg shadow-lg text-center transform hover:-translate-y-1 transition-transform">
+                        <div class="font-alfa text-white text-4xl md:text-5xl mb-4 uppercase">Fácil de Instalar</div>
                         <div
-                            class="text-xl md:text-2xl text-gray-600 font-bold bg-black text-white rounded px-2 py-1 inline-block">
-                            Arsenal
-                            Completo</div>
+                            class="text-3xl md:text-4xl text-gray-600 font-bold bg-black text-white rounded px-9 py-1 padding-5">
+                            Apenas 4
+                            Parafusos</div>
                     </div>
                     <!-- Feature 4 -->
                     <div
-                        class="bg-primary p-3 rounded-lg shadow-lg text-center transform hover:-translate-y-1 transition-transform">
-                        <div class="font-alfa text-white text-2xl md:text-3xl mb-2 uppercase">Controle Total</div>
+                        class="grid bg-primary p-3 rounded-lg shadow-lg text-center transform hover:-translate-y-1 transition-transform">
+                        <div class="font-alfa text-white text-4xl md:text-5xl mb-2 uppercase">Controle Total</div>
                         <div
-                            class="text-xl md:text-2xl text-gray-600 font-bold bg-black text-white rounded px-2 py-1 inline-block">
+                            class="text-3xl md:text-4xl text-gray-600 font-bold bg-black text-white rounded px-2 py-1 inline-block padding-5">
                             3 ou 4
                             Níveis de ajuste</div>
                     </div>
                 </div>
+                <h3 class="font-roboto text-2xl md:text-2xl text-white text-center w-2/3 mx-auto margin-top-25px">
+                    Tudo que você precisa para um churrasco completo.
+                </h3>
 
                 <!-- CTA -->
                 <div class="mt-8 text-center">

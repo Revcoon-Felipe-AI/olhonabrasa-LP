@@ -51,13 +51,13 @@ body {
     z-index: 10;
     text-align: center;
     padding: 30px 0 20px;
-    max-width: 1200px;
+    max-width: 120px;
     margin: 0 auto;
 }
 
 .logo-main {
     max-height: 40px;
-    width: auto;
+    width: 60px;
     display: inline-block;
 }
 
@@ -74,13 +74,13 @@ body {
 /* Main Column */
 .main-column {
     position: relative;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto 40px;
     /* Removed top margin since logo is outside */
     padding: 40px 30px;
-    background: #e96527;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    background: rgba(233, 101, 39, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 24px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     min-height: calc(100vh - 150px);
@@ -91,45 +91,45 @@ body {
 /* Overlays */
 .main-column::before {
     content: '';
-    position: absolute;
-    top: 50%;
+    position: fixed;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
-    height: 80%;
+    width: 120%;
+    height: 120%;
     background-image: url('https://s3.1app.com.br/master/project_24727/p0aphQWQlv6SWVtppzpNyNRYjPVBpjl9.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    opacity: 0.05;
+    opacity: 0.07;
     pointer-events: none;
-    z-index: 0;
+    z-index: auto;
 }
 
-.main-column::after {
-    content: 'KIT PREMIUM';
-    position: absolute;
-    top: 50%;
+.main-column::selection {
+    content: 'KIT PREMIUM <bR>SUPORTE SUSPENSO</bR>';
+    position: fixed;
+    top: 5%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-45deg);
     font-family: 'Alfa Slab One', serif;
     font-size: 8rem;
     color: #ffffff;
-    opacity: 0.03;
+    opacity: 0.04;
     white-space: nowrap;
-    pointer-events: none;
+    pointer-events: auto;
     z-index: 0;
 }
 
 /* Ensure content is above overlays */
 .main-column>* {
     position: relative;
-    z-index: 1;
+    z-index: 10;
 }
 
 @media (max-width: 767px) {
     .main-column {
-        max-width: 90%;
+        max-width: 100%;
         margin: 0 auto 20px;
         padding: 30px 20px;
         border-radius: 16px;
@@ -150,8 +150,9 @@ body {
     color: #ffffff;
     text-align: center;
     margin-top: 30px;
-    line-height: 1.6;
+    line-height: 1.0;
     font-weight: 500;
+    padding: 20px 0px 25px 0px;
 }
 
 @media (max-width: 767px) {
@@ -198,14 +199,13 @@ body {
 
 /* Carousel Styles */
 .carousel-wrapper {
-    width: 100%;
+    width: 400px;
     overflow: hidden;
     position: relative;
 }
 
 .carousel-container {
     position: relative;
-    width: 100%;
     overflow: hidden;
 }
 
@@ -214,11 +214,11 @@ body {
 .carousel-container::after {
     content: '';
     position: absolute;
-    top: 0;
-    width: 4px;
+    top: 100%;
+    width: 250px;
     /* Mobile default */
     height: 100%;
-    z-index: 1;
+    z-index: 10;
     pointer-events: none;
 }
 
@@ -226,7 +226,7 @@ body {
 
     .carousel-container::before,
     .carousel-container::after {
-        width: 150px;
+        width: 250px;
         /* Desktop */
     }
 }
@@ -251,7 +251,7 @@ body {
 
 @media (max-width: 767px) {
     .carousel-track {
-        gap: 15px;
+        gap: 30px;
         /* Reduced gap mobile */
     }
 }
@@ -265,9 +265,9 @@ body {
 }
 
 .carousel-item {
-    height: 250px;
+    height: 350px;
     width: auto;
-    object-fit: contain;
+    object-fit: cover;
     flex-shrink: 0;
     border-radius: 8px;
 }
@@ -275,19 +275,23 @@ body {
 @media (min-width: 768px) {
     .carousel-item {
         height: 200px;
+        width: 200px;
+        margin: -30px 0 0 -30px;
     }
 }
 
 /* Projects Carousel Specifics */
 .projects-track .carousel-item {
-    height: 200px;
-    transition: transform 0.3s ease;
+    height: 300px;
+    transition: transform 0.5s ease;
     /* Smooth hover effect */
 }
 
 @media (min-width: 768px) {
     .projects-track .carousel-item {
         height: 300px;
+        width: 200px;
+        margin: -30px 0 0 -30px;
     }
 
     .projects-track {
@@ -345,26 +349,26 @@ body {
 }
 
 .faq-item[open] {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.7);
 }
 
 /* Urgency Section Styles */
 .urgency-banner {
     background: #ffffff;
-    border: 4px solid #e96527;
+    border: 1px solid #e96527;
     transform: rotate(-1deg);
-    transition: transform 0.3s ease;
+    transition: transform 15s ease;
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 700px;
+    margin: 0 0 -100px 0;
     position: relative;
     z-index: 20;
 }
 
 .urgency-banner:hover {
-    transform: rotate(0deg) scale(1.02);
+    transform: rotate(0deg) scale(0.3);
 }
 
 #countdown span {
@@ -375,9 +379,9 @@ body {
 .rotating-banners {
     position: relative;
     width: 100%;
-    height: 160px;
-    overflow: hidden;
-    margin: -10px 0 20px;
+    height: 100px;
+    transition: transform 15s ease;
+    margin: 0px 0 20px 0;
     /* Negative top margin to pull it up */
     display: flex;
     justify-content: center;
@@ -389,12 +393,12 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 170%;
+    width: 130%;
+    transition: transform 15s ease;
     /* Maior que 100% para cobrir rotação */
-    height: 70px;
+    height: 0px;
     display: flex;
     align-items: center;
-    overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -409,7 +413,7 @@ body {
 .rotate-pos {
     transform: translate(-50%, -50%) rotate(10deg);
     background: #000000;
-    z-index: 51;
+    z-index: 10;
 }
 
 /* Track do texto (O que se move) */
@@ -464,17 +468,21 @@ body {
 /* Mobile */
 @media (max-width: 767px) {
     .rotating-banners {
-        height: 250px;
-        margin: 0;
+        height: 150px;
+        margin: 0px 0 20px 0;
+        opacity: 0.5;
+        transition: transform 15s ease;
     }
 
     .banner-container {
-        height: 90px;
+        height: 50px;
+        transition: transform 15s ease;
     }
 
     .banner-text {
-        font-size: 1.1rem;
+        font-size: 1.9rem;
         padding: 0 20px;
+        transition: transform 15s ease;
     }
 }
 
@@ -495,5 +503,5 @@ body {
 }
 
 #mobile-banner .carousel-track:hover {
-    animation-play-state: paused;
+    animation-play-state: running;
 }
