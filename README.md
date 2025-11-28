@@ -46,3 +46,4 @@ netlify dev
 
 *   **Sellflux**: Via Webhook (Server-side).
 *   **Facebook Pixel**: Captura de cookies no frontend e envio via API (CAPI) através do Sellflux.
+# olhonabrasa-LP
