@@ -18,6 +18,13 @@ document.addEventListener('DOMContentLoaded', function () {
         if (fbcField) fbcField.value = fbc;
     }
 
+    // --- PARTE 1.5: Event ID (Deduplicação Facebook) ---
+    const uniqueEventID = 'evt_' + new Date().getTime() + '_' + Math.floor(Math.random() * 10000);
+    const eventIdField = document.getElementById('event_id_field');
+    if (eventIdField) {
+        eventIdField.value = uniqueEventID;
+    }
+
     // --- PARTE 2: UTMs (Com persistência) ---
     const utmParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
     const urlParams = new URLSearchParams(window.location.search);
@@ -69,6 +76,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 e.preventDefault();
                 alert('Por favor, insira um telefone válido com DDD.');
                 phoneInput.focus();
+            } else {
+                // Dispara o evento Lead para o Facebook com o mesmo EventID
+                if (typeof fbq === 'function') {
+                    fbq('track', 'Lead', {}, { eventID: uniqueEventID });
+                }
             }
         });
     }
