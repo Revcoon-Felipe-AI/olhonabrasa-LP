@@ -129,7 +129,7 @@ body {
 
 @media (max-width: 767px) {
     .main-column {
-        max-width: 100%;
+        max-width: 90%;
         margin: 0 auto 20px;
         padding: 30px 20px;
         border-radius: 16px;
