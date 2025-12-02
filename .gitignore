@@ -1,6 +1,4 @@
-.DS_Store
 node_modules
-.netlify
 .env
-dist
-build
+.DS_Store
+.netlify

@@ -1,49 +1,100 @@
-# Olho na Brasa - Landing Page
+# Olho na Brasa - Marketing & Tech Projects
 
-Landing page de alta conversão para "Olho na Brasa", especializada em churrasqueiras personalizadas.
+Este repositório contém dois projetos distintos de marketing digital e captura de leads para a marca **Olho na Brasa**:
+1.  **Landing Page de Alta Conversão**: A página principal de vendas do Suporte Suspenso.
+2.  **Chat Widget (Leadbot)**: Um widget de chat embarcável para captura de leads em sites de terceiros (estilo Leadster).
 
-## Estrutura do Projeto
+---
 
-O projeto foi organizado para facilitar a manutenção e o deploy no Netlify.
+## 1. Landing Page (LP)
 
-*   **`index.html`**: Página principal (Landing Page).
-*   **`css/`**: Contém os estilos (`styles.css`).
-*   **`js/`**: Contém a lógica (`script.js`).
-*   **`docs/`**: Documentação completa do projeto.
-*   **`netlify/`**: Funções Serverless e Edge Functions.
-    *   `functions/submission-created.js`: Processa formulários e envia para o Sellflux.
-    *   `edge-functions/`: (Preparado) Para futuros testes A/B.
-*   **`export/`**: Versão consolidada (`sellflux_lp.html`) para uso direto no Sellflux (se necessário).
+A Landing Page foi desenvolvida para maximizar a conversão de visitantes em leads qualificados para o time comercial.
 
-## Configuração e Deploy (Netlify)
+### 🛠 Tecnologias
+-   **HTML5 / CSS3**: Estrutura semântica e estilização moderna.
+-   **Tailwind CSS**: Framework utilitário para design responsivo e ágil.
+-   **Vanilla JavaScript**: Lógica leve para modais, carrosséis e validações.
+-   **Netlify Functions**: Backend serverless para proxy seguro de webhooks.
 
-Este projeto utiliza **Netlify Forms** e **Netlify Functions**.
+### ✨ Funcionalidades Principais
+-   **Design Premium**: Estética "Dark/Fire" com efeitos de glassmorphism e animações.
+-   **Carrossel Infinito**: Marquee de produtos para prova social visual.
+-   **Captura em 2 Etapas**:
+    1.  **Formulário Inicial**: Captura Nome, Email e WhatsApp.
+    2.  **Modal de Confirmação**: Garante a veracidade dos dados.
+    3.  **Quiz de Qualificação (Survey)**: 7 perguntas interativas para perfilar o lead.
+-   **Rastreamento Avançado**:
+    -   Captura automática de UTMs (`utm_source`, `medium`, etc.).
+    -   Integração com Facebook Pixel (Deduplicação via `event_id`).
+    -   Cookies `_fbc` e `_fbp`.
+-   **Webhooks Duplos (via n8n)**:
+    -   **Lead Capture**: Disparo imediato ao confirmar dados básicos.
+    -   **Survey Enrichment**: Disparo enriquecido ao finalizar o Quiz.
 
-### 1. Variáveis de Ambiente (Segurança)
-Para que a integração com o Sellflux funcione, você deve configurar a seguinte variável de ambiente no painel da Netlify:
+### 📂 Estrutura de Arquivos (LP)
+-   `index.html`: Arquivo principal.
+-   `js/script.js`: Lógica de formulários, quiz e rastreamento.
+-   `css/styles.css`: Estilos customizados e Tailwind.
+-   `netlify/functions/collect-lead.js`: Proxy seguro para o n8n.
 
-*   **Key**: `SELLFLUX_WEBHOOK_URL`
-*   **Value**: A URL do seu Webhook no Sellflux.
+---
 
-### 2. Formulário
-O formulário captura automaticamente:
-*   Dados do Lead (Nome, Email, WhatsApp).
-*   Cookies do Facebook (`_fbp`, `_fbc`).
-*   Parâmetros UTM (`utm_source`, etc.).
+## 2. Chat Widget (Leadbot)
 
-### 3. Testes A/B
-Consulte `docs/AB_TESTING_GUIDE.md` para instruções sobre como criar variantes e configurar testes A/B.
+Um script autônomo projetado para ser "embarcado" em qualquer site (e-commerce, blog, parceiros) para capturar leads de forma conversacional.
 
-## Desenvolvimento Local
+### 🛠 Arquitetura
+-   **Frontend (`/widget-leadster`)**:
+    -   Script único (`widget.js`) que injeta seu próprio HTML e CSS (Shadow DOM-like).
+    -   Totalmente isolado do CSS do site hospedeiro.
+-   **Backend Seguro**:
+    -   O widget envia dados para `/.netlify/functions/collect-lead`.
+    -   A função adiciona a URL do n8n (escondida no servidor) e encaminha os dados.
 
-Para rodar localmente, você pode abrir o `index.html` diretamente no navegador. Para testar as Netlify Functions localmente, recomenda-se usar o [Netlify CLI](https://docs.netlify.com/cli/get-started/).
+### 🚀 Como Usar (Embed)
+Para adicionar o chat em um site, basta inserir o seguinte código antes do fechamento da tag `</body>`:
 
-```bash
-netlify dev
+```html
+<script src="https://seu-dominio-netlify.app/widget-leadster/widget.js"></script>
 ```
 
-## Integrações
+---
 
-*   **Sellflux**: Via Webhook (Server-side).
-*   **Facebook Pixel**: Captura de cookies no frontend e envio via API (CAPI) através do Sellflux.
-# olhonabrasa-LP
+## 3. Configuração e Deploy
+
+### Variáveis de Ambiente (Obrigatório)
+Para que o sistema funcione, você deve configurar as seguintes variáveis no painel da Netlify (**Site Settings > Environment Variables**) ou no arquivo `.env` localmente:
+
+| Chave | Descrição |
+| :--- | :--- |
+| `N8N_WEBHOOK_LEAD_URL` | URL do Webhook do n8n para receber o lead inicial (Nome, Email, Whats). |
+| `N8N_WEBHOOK_SURVEY_URL` | URL do Webhook do n8n para receber as respostas do Quiz. |
+
+### 💻 Como Rodar Localmente
+
+Como utilizamos **Netlify Functions** para segurança, você **NÃO** pode apenas abrir o `index.html` no navegador. Você precisa simular o servidor da Netlify.
+
+1.  **Instale o Netlify CLI** (caso não tenha):
+    ```bash
+    npm install netlify-cli -g
+    ```
+
+2.  **Configure o Ambiente Local**:
+    Crie um arquivo `.env` na raiz do projeto e adicione suas URLs:
+    ```env
+    N8N_WEBHOOK_LEAD_URL=https://webhook.sellflux.com.br/...
+    N8N_WEBHOOK_SURVEY_URL=https://webhook.sellflux.com.br/...
+    ```
+
+3.  **Inicie o Servidor**:
+    ```bash
+    netlify dev
+    ```
+    O terminal mostrará um link (geralmente `http://localhost:8888`). Acesse por este link.
+
+4.  **Teste o Widget**:
+    Acesse `http://localhost:8888/test-widget.html` para ver o chat em ação.
+
+---
+
+**Desenvolvido por Felipe Moreira & Antigravity Agent**
