@@ -69,19 +69,55 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     const form = document.getElementById('form-contato');
-    if (form) {
+    const modal = document.getElementById('confirmation-modal');
+    const btnConfirm = document.getElementById('btn-confirm-submit');
+    const btnEdit = document.getElementById('btn-edit');
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+
+    if (form && modal && btnConfirm && btnEdit) {
+        // 1. Intercept Form Submit
         form.addEventListener('submit', function (e) {
+            e.preventDefault(); // Stop submission
+
+            // Validate Phone
             const phoneValue = phoneInput.value.replace(/\D/g, '');
             if (phoneValue.length < 10 || phoneValue.length > 11) {
-                e.preventDefault();
                 alert('Por favor, insira um telefone válido com DDD.');
                 phoneInput.focus();
-            } else {
-                // Dispara o evento Lead para o Facebook com o mesmo EventID
-                if (typeof fbq === 'function') {
-                    fbq('track', 'Lead', {}, { eventID: uniqueEventID });
-                }
+                return;
             }
+
+            // Populate Modal
+            document.getElementById('modal-name-display').textContent = nameInput.value;
+            document.getElementById('modal-email-display').textContent = emailInput.value;
+            document.getElementById('modal-phone-display').textContent = phoneInput.value;
+
+            // Show Modal
+            modal.classList.remove('hidden');
+        });
+
+        // 2. Handle "Editar" (Close Modal)
+        btnEdit.addEventListener('click', function () {
+            modal.classList.add('hidden');
+        });
+
+        // 3. Handle "Confirmar" (Submit)
+        btnConfirm.addEventListener('click', function () {
+            // Add Country Code (+55)
+            let rawPhone = phoneInput.value.replace(/\D/g, '');
+            if (!rawPhone.startsWith('55')) {
+                rawPhone = '55' + rawPhone;
+            }
+            phoneInput.value = rawPhone; // Update input value for submission
+
+            // Track Facebook Lead
+            if (typeof fbq === 'function') {
+                fbq('track', 'Lead', {}, { eventID: uniqueEventID });
+            }
+
+            // Submit Form
+            form.submit();
         });
     }
 
